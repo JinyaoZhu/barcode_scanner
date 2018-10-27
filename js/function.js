@@ -48,12 +48,18 @@ function matchSearch(xmlDoc) {
   console.log(visble_count);
   // if only one row is visible, than update the datasheet
   if (visble_count == 1) {
-    var xml_index = findCompIndex(table.rows[visble_index].cells[0].innerHTML, xmlDoc);
     updateCompData(table.rows[visble_index].cells[0].innerHTML, xmlDoc);
-    console.log(table.rows[visble_index].cells[0].innerHTML);
+    // console.log(table.rows[visble_index].cells[0].innerHTML);
   }
   else
     clearCompData();
+}
+
+function onEnter(xmlDoc) {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("searchBar");
+  updateCompData(input.value, xmlDoc);
+  // console.log(table.rows[visble_index].cells[0].innerHTML);
 }
 
 function loadXmlFile(xmlPath) {
