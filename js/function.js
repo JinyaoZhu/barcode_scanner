@@ -22,7 +22,7 @@ function matchSearch(xmlDoc) {
   table = document.getElementById("cdTable");
   tr = table.getElementsByTagName("tr");
 
-  if(input.value.length != 8){
+  if (input.value.length != 8) {
     return;
   }
 
@@ -52,15 +52,26 @@ function matchSearch(xmlDoc) {
   }
   // console.log(visble_count);
   // if only one row is visible, than update the datasheet
-  if ((visble_count == 1)&((input.value.length==8))) {
-    var xml_index = findCompIndex(table.rows[visble_index].cells[0].innerHTML, xmlDoc);
+  if ((visble_count == 1) & ((input.value.length == 8))) {
     updateCompData(table.rows[visble_index].cells[0].innerHTML, xmlDoc);
     // console.log(table.rows[visble_index].cells[0].innerHTML);
-    console.log(input.value);
+    // console.log(input.value);
     input.value = "";
   }
   // else
-    // clearCompData();
+  // clearCompData();
+}
+
+function onEnter(event, xmlDoc) {
+  event.preventDefault();
+  if (event.keyCode == 13) {
+    var input;
+    input = document.getElementById("searchBar");
+    updateCompData(input.value, xmlDoc);
+    document.getElementById('lastScan').innerHTML = 'Last scan: ' + input.value;
+    input.value = "";
+    // console.log(table.rows[visble_index].cells[0].innerHTML);
+  }
 }
 
 function loadXmlFile(xmlPath) {
@@ -133,9 +144,14 @@ function updateCompData(code, xmlDoc) {
 
   if (index != -1) {
     document.getElementById("compImg").src = "./data/" + x[index].getElementsByTagName("PICTURE")[0].childNodes[0].nodeValue;
-    document.getElementById("compCode").innerText = "Code: "+code;
+    document.getElementById("compCode").innerText = "Code: " + code;
     document.getElementById("compName").innerText = x[index].getElementsByTagName("NO")[0].childNodes[0].nodeValue + "  " +
       x[index].getElementsByTagName("NAME")[0].childNodes[0].nodeValue;
+   
+    document.getElementById('pdfWindow').innerHTML = '<embed id="compPdf" src="'+
+    "./data/" + x[index].getElementsByTagName("DATASHEET")[0].childNodes[0].nodeValue
+    + '" width="100%" height="100%">';
+    // document.getElementById("compPdf").src = "./data/" + x[index].getElementsByTagName("DATASHEET")[0].childNodes[0].nodeValue;
   }
   else
     clearCompData();
@@ -143,7 +159,9 @@ function updateCompData(code, xmlDoc) {
 
 function clearCompData() {
   document.getElementById("compImg").src = "";
+  document.getElementById("compCode").innerText = "";
   document.getElementById("compName").innerText = "No matching.";
+  // document.getElementById("compPdf").src = "";
 }
 
 function addTableOnClickEven(table, xmlDoc) {

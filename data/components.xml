@@ -3,7 +3,7 @@
         <NO>B1</NO>
         <NAME>Container</NAME>
         <PICTURE>KVA-datasheets/B1/basin_B1_pic.PNG</PICTURE>
-        <DATASHEET> </DATASHEET>
+        <DATASHEET>KVA-datasheets/B1/170707_gb.pdf</DATASHEET>
         <CODE>73635109</CODE>
     </COMPONENT>
 
@@ -11,7 +11,7 @@
         <NO>B2</NO>
         <NAME>Container</NAME>
         <PICTURE>KVA-datasheets/B2/basin_B2_pic.PNG</PICTURE>
-        <DATASHEET> </DATASHEET>
+        <DATASHEET>KVA-datasheets/B2/170707_gb.pdf</DATASHEET>
         <CODE>4006144007919</CODE>
     </COMPONENT>
 
@@ -19,7 +19,7 @@
         <NO>B3</NO>
         <NAME>Container</NAME>
         <PICTURE>KVA-datasheets/B3/basin_B3_pic.PNG</PICTURE>
-        <DATASHEET> </DATASHEET>
+        <DATASHEET>KVA-datasheets/B3/170707_gb.pdf</DATASHEET>
         <CODE>4006144007920</CODE>
     </COMPONENT>
 
@@ -27,7 +27,7 @@
         <NO>F1</NO>
         <NAME>Flowsensor</NAME>
         <PICTURE>KVA-datasheets/F1/sensor_F1_pic.PNG</PICTURE>
-        <DATASHEET> </DATASHEET>
+        <DATASHEET>KVA-datasheets/F1/170711_gb.pdf</DATASHEET>
         <CODE>23425101</CODE>
     </COMPONENT>
 
@@ -35,7 +35,7 @@
         <NO>LH1</NO>
         <NAME>Capacitive proximity sensor</NAME>
         <PICTURE>KVA-datasheets/LH1/sensor_LH1_pic.PNG</PICTURE>
-        <DATASHEET> </DATASHEET>
+        <DATASHEET>KVA-datasheets/LH1/258172_gb.pdf</DATASHEET>
         <CODE>87363500</CODE>
     </COMPONENT>
 
@@ -43,7 +43,7 @@
         <NO>LH2</NO>
         <NAME>Capacitive proximity sensor</NAME>
         <PICTURE>KVA-datasheets/LH2/sensor_LH2_pic.PNG</PICTURE>
-        <DATASHEET> </DATASHEET>
+        <DATASHEET>KVA-datasheets/LH2/258172_gb.pdf</DATASHEET>
         <CODE>47362505</CODE>
     </COMPONENT>
 
@@ -51,7 +51,7 @@
         <NO>LL1</NO>
         <NAME>Capacitive proximity sensor</NAME>
         <PICTURE>KVA-datasheets/LL1/sensor_LL1_pic.PNG</PICTURE>
-        <DATASHEET> </DATASHEET>
+        <DATASHEET>KVA-datasheets/LL1/258172_gb.pdf</DATASHEET>
         <CODE>67352609</CODE>
     </COMPONENT>
 
@@ -59,7 +59,7 @@
         <NO>LL2</NO>
         <NAME>Capacitive proximity sensor</NAME>
         <PICTURE>KVA-datasheets/LL2/sensor_LL2_pic.PNG</PICTURE>
-        <DATASHEET> </DATASHEET>
+        <DATASHEET>KVA-datasheets/LL2/258172_gb.pdf</DATASHEET>
         <CODE>67251209</CODE>
     </COMPONENT>
 
@@ -67,7 +67,7 @@
         <NO>P1</NO>
         <NAME>Pump</NAME>
         <PICTURE>KVA-datasheets/P1/actuator_P1_pic.PNG</PICTURE>
-        <DATASHEET> </DATASHEET>
+        <DATASHEET>KVA-datasheets/P1/170712_gb.pdf</DATASHEET>
         <CODE>23421202</CODE>
     </COMPONENT>
 
@@ -75,7 +75,7 @@
         <NO>V1</NO>
         <NAME>Proportional valve</NAME>
         <PICTURE>KVA-datasheets/V1/actuator_V1_pic.PNG</PICTURE>
-        <DATASHEET> </DATASHEET>
+        <DATASHEET>KVA-datasheets/V1/170714_gb.pdf</DATASHEET>
         <CODE>63762105</CODE>
     </COMPONENT>
 
@@ -83,7 +83,7 @@
         <NO>Y1</NO>
         <NAME>2/2-way solenoid valve</NAME>
         <PICTURE>KVA-datasheets/Y1/actuator_Y1_pic.PNG</PICTURE>
-        <DATASHEET> </DATASHEET>
+        <DATASHEET>KVA-datasheets/Y1/170715_gb.pdf</DATASHEET>
         <CODE>73871200</CODE>
     </COMPONENT>
 </CATALOG>

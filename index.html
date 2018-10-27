@@ -12,7 +12,8 @@
     </script>
     <h1>Barcode Scanner</h1>
     <p>I'm a Barcode-Scanner</p>
-    <input type="text" id="searchBar" oninput="matchSearch(xmlDoc)" placeholder="Search component...">
+    <input type="text" id="searchBar" onkeyup="onEnter(event,xmlDoc)" placeholder="Search component...">
+    <p id=lastScan>Last scan:</p>
   </div>
 </head>
 
@@ -32,14 +33,18 @@
 
     <div class="main">
       <!-- <h2>Component:</h2> -->
-      <h3 id='compCode'></h3>
+      <h3 id='compCode'>Code:</h3>
       <h3 id='compName'></h3>
       <!-- <div class="componentImg" style="height:200px;"> </div> -->
       <img id='compImg' border="0" width="100px" />
-      
+
       <!-- <script> loadCompImg(); </script> -->
-      <p>Datasheet:</p>
-      <p>...some details...</p>
+      <!-- <p>Datasheet:</p>
+          <p>...some details...</p> -->
+    </div>
+
+    <div id="pdfWindow" class="pdfView">
+      <!-- <embed id="compPdf" src="test_barcode.pdf" width="100%" height="100%"> -->
     </div>
   </div>
 
