@@ -1,0 +1,41 @@
+<CATALOG>
+    <COMPONENT>
+        <NO>B1</NO>
+        <NAME>Container</NAME>
+        <PICTURE>KVA-datasheets/B1/basin_B1_pic.PNG</PICTURE>
+        <DATASHEET> </DATASHEET>
+        <CODE>4006144007918</CODE>
+    </COMPONENT>
+
+    <COMPONENT>
+        <NO>B2</NO>
+        <NAME>Container</NAME>
+        <PICTURE>KVA-datasheets/B2/basin_B2_pic.PNG</PICTURE>
+        <DATASHEET> </DATASHEET>
+        <CODE>4006144007919</CODE>
+    </COMPONENT>
+
+    <COMPONENT>
+        <NO>B3</NO>
+        <NAME>Container</NAME>
+        <PICTURE>KVA-datasheets/B3/basin_B3_pic.PNG</PICTURE>
+        <DATASHEET> </DATASHEET>
+        <CODE>4006144007920</CODE>
+    </COMPONENT>
+
+    <COMPONENT>
+        <NO>F1</NO>
+        <NAME>Flowsensor</NAME>
+        <PICTURE>KVA-datasheets/F1/sensor_F1_pic.PNG</PICTURE>
+        <DATASHEET> </DATASHEET>
+        <CODE>4006144007921</CODE>
+    </COMPONENT>
+
+    <COMPONENT>
+        <NO>LH1</NO>
+        <NAME>Capacitive proximity sensor</NAME>
+        <PICTURE>KVA-datasheets/LH1/sensor_LH1_pic.PNG</PICTURE>
+        <DATASHEET> </DATASHEET>
+        <CODE>4006144007922</CODE>
+    </COMPONENT>
+</CATALOG>
