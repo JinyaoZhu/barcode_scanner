@@ -15,11 +15,16 @@ var keyUpDelay = (function () {
 })();
 
 function matchSearch(xmlDoc) {
+
   var input, filter, table, tr, td, i;
   input = document.getElementById("searchBar");
   filter = input.value.toUpperCase();
   table = document.getElementById("cdTable");
   tr = table.getElementsByTagName("tr");
+
+  if(input.value.length != 8){
+    return;
+  }
 
   for (i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[0];
@@ -45,15 +50,17 @@ function matchSearch(xmlDoc) {
       }
     }
   }
-  console.log(visble_count);
+  // console.log(visble_count);
   // if only one row is visible, than update the datasheet
-  if (visble_count == 1) {
+  if ((visble_count == 1)&((input.value.length==8))) {
     var xml_index = findCompIndex(table.rows[visble_index].cells[0].innerHTML, xmlDoc);
     updateCompData(table.rows[visble_index].cells[0].innerHTML, xmlDoc);
-    console.log(table.rows[visble_index].cells[0].innerHTML);
+    // console.log(table.rows[visble_index].cells[0].innerHTML);
+    console.log(input.value);
+    input.value = "";
   }
-  else
-    clearCompData();
+  // else
+    // clearCompData();
 }
 
 function loadXmlFile(xmlPath) {
@@ -126,6 +133,7 @@ function updateCompData(code, xmlDoc) {
 
   if (index != -1) {
     document.getElementById("compImg").src = "./data/" + x[index].getElementsByTagName("PICTURE")[0].childNodes[0].nodeValue;
+    document.getElementById("compCode").innerText = "Code: "+code;
     document.getElementById("compName").innerText = x[index].getElementsByTagName("NO")[0].childNodes[0].nodeValue + "  " +
       x[index].getElementsByTagName("NAME")[0].childNodes[0].nodeValue;
   }
