@@ -1,4 +1,20 @@
-function matchSearch() {
+var timer;
+
+// function keyUpDelay(callback, ms){
+//   //  var timer = 0;
+//     clearTimeout (timer);
+//     timer = setTimeout(callback, ms);
+// };
+
+var keyUpDelay = (function () {
+  var timer = 0;
+  return function (callback, ms) {
+    clearTimeout(timer);
+    timer = setTimeout(callback, ms);
+  };
+})();
+
+function matchSearch(xmlDoc) {
   var input, filter, table, tr, td, i;
   input = document.getElementById("searchBar");
   filter = input.value.toUpperCase();
@@ -10,11 +26,34 @@ function matchSearch() {
     if (td) {
       if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
         tr[i].style.display = "";
-      } else {
+      }
+      else {
         tr[i].style.display = "none";
       }
     }
   }
+
+  // find how many row are visible
+  var visble_count = 0;
+  var visble_index;
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (tr[i].style.display == "") {
+        visble_count++;
+        visble_index = i;
+      }
+    }
+  }
+  console.log(visble_count);
+  // if only one row is visible, than update the datasheet
+  if (visble_count == 1) {
+    var xml_index = findCompIndex(table.rows[visble_index].cells[0].innerHTML, xmlDoc);
+    updateCompData(table.rows[visble_index].cells[0].innerHTML, xmlDoc);
+    console.log(table.rows[visble_index].cells[0].innerHTML);
+  }
+  else
+    clearCompData();
 }
 
 function loadXmlFile(xmlPath) {
@@ -59,24 +98,52 @@ function drawTable(xmlDoc) {
   document.write('</tr>');
 }
 
-function tableOnClickEven(tableRow, xmlDoc) {
-  // alert(tableRow.cells[0].innerHTML);
-  // document.getElementById("compImg").src = './data/KVA-datasheets/B1/basin_B1_pic.PNG';
+function findCompIndex(code, xmlDoc) {
+  var index;
+  var match_cout = 0;
   var x = xmlDoc.getElementsByTagName("COMPONENT");
   for (i = 0; i < x.length; i++) {
-    if (x[i].getElementsByTagName("CODE")[0].childNodes[0].nodeValue == tableRow.cells[0].innerHTML) {
-      document.getElementById("compImg").src = "./data/" + x[i].getElementsByTagName("PICTURE")[0].childNodes[0].nodeValue;
-      document.getElementById("compName").innerText = x[i].getElementsByTagName("NO")[0].childNodes[0].nodeValue + "  "+
-      x[i].getElementsByTagName("NAME")[0].childNodes[0].nodeValue;
+    if (x[i].getElementsByTagName("CODE")[0].childNodes[0].nodeValue == code) {
+      match_cout++;
+      index = i;
     }
   }
+  if (match_cout == 1)
+    return index;
+  else if (match_cout == 0)
+    return -1;
+  else {
+    alert("error: multiple matching!");
+    return -1;
+  }
+}
+
+function updateCompData(code, xmlDoc) {
+  // alert(tableRow.cells[0].innerHTML);
+  // document.getElementById("compImg").src = './data/KVA-datasheets/B1/basin_B1_pic.PNG';
+  var index = findCompIndex(code, xmlDoc);
+  var x = xmlDoc.getElementsByTagName("COMPONENT");
+
+  if (index != -1) {
+    document.getElementById("compImg").src = "./data/" + x[index].getElementsByTagName("PICTURE")[0].childNodes[0].nodeValue;
+    document.getElementById("compName").innerText = x[index].getElementsByTagName("NO")[0].childNodes[0].nodeValue + "  " +
+      x[index].getElementsByTagName("NAME")[0].childNodes[0].nodeValue;
+  }
+  else
+    clearCompData();
+}
+
+function clearCompData() {
+  document.getElementById("compImg").src = "";
+  document.getElementById("compName").innerText = "No matching.";
 }
 
 function addTableOnClickEven(table, xmlDoc) {
   if (table != null) {
     for (var i = 0; i < table.rows.length; i++) {
-      table.rows[i].onmouseover = function () {
-        tableOnClickEven(this, xmlDoc);
+      table.rows[i].onclick = function () {
+        var code = this.cells[0].innerHTML;
+        updateCompData(code, xmlDoc);
       };
       // for (var j = 0; j < table.rows[i].cells.length; j++);
     }

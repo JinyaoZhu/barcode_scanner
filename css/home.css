@@ -17,6 +17,9 @@ body{
 .header h1 {
     font-size: 30px;
 }
+.header p {
+    font-size: 15px;
+}
 
 .navbar {
     overflow: hidden;
@@ -76,18 +79,28 @@ body{
     background: #ddd;
 }
  
-/* 响应式布局 - 在屏幕设备宽度尺寸小于 700px 时, 让两栏上下堆叠显示 */
 @media screen and (max-width: 700px) {
     .row {   
         flex-direction: column;
     }
+    .header h1 {
+        font-size: 20px;
+    }
+    .header p {
+        font-size: 10px;
+    }
 }
  
-/* 响应式布局 - 在屏幕设备宽度尺寸小于 400px 时, 让导航栏目上下堆叠显示 */
 @media screen and (max-width: 400px) {
     .navbar a {
         float: none;
         width: 100%;
+    }
+    .header h1 {
+        font-size: 15px;
+    }
+    .header p {
+        font-size: 10px;
     }
 }
 
@@ -95,7 +108,7 @@ body{
     background-image: url('../img/searchicon.png'); /* search button */
     background-position: 10px 12px; 
     background-repeat: no-repeat;
-    width: 95%;
+    width: 90%;
     font-size: 16px;
     padding: 12px 20px 12px 40px;
     border: 1px solid #ddd;

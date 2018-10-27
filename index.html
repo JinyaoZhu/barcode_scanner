@@ -1,35 +1,41 @@
 <!DOCTYPE html>
 <html>
-<link type="text/css" href="./css/home.css" rel="stylesheet" />
-<script type="text/javascript" src="js/function.js" charset="utf-8"></script>
-<div class="header">
-  <script>
-    xmlDoc = loadXmlFile("./data/components.xml");
-  </script>
-  <h1>Barcode Scanner</h1>
-  <p>I'm a Barcode-Scanner</p>
-</div>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <div class="header">
+    <link type="text/css" href="./css/home.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/function.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      xmlDoc = loadXmlFile("./data/components.xml");
+    </script>
+    <h1>Barcode Scanner</h1>
+    <p>I'm a Barcode-Scanner</p>
+    <input type="text" id="searchBar" onkeyup="matchSearch(xmlDoc)" placeholder="Search component...">
+  </div>
+</head>
 
 <body>
   <div class="row">
     <div class="side">
-      <input type="text" id="searchBar" onkeyup="matchSearch()" placeholder="Search component...">
       <table id="cdTable">
-        <script>
+        <script type="text/javascript">
           drawTable(xmlDoc);
           sortTable();
         </script>
       </table>
-      <script>
-        addTableOnClickEven(document.getElementById("cdTable"),xmlDoc);
+      <script type="text/javascript">
+        addTableOnClickEven(document.getElementById("cdTable"), xmlDoc);
       </script>
     </div>
 
     <div class="main">
-      <h2>Component:</h2>
-      <h5 id='compName'></h5>
+      <!-- <h2>Component:</h2> -->
+      <h3 id='compName'></h3>
       <!-- <div class="componentImg" style="height:200px;"> </div> -->
       <img id='compImg' border="0" width="100px" />
+      
       <!-- <script> loadCompImg(); </script> -->
       <p>Datasheet:</p>
       <p>...some details...</p>

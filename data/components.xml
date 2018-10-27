@@ -4,7 +4,7 @@
         <NAME>Container</NAME>
         <PICTURE>KVA-datasheets/B1/basin_B1_pic.PNG</PICTURE>
         <DATASHEET> </DATASHEET>
-        <CODE>4006144007918</CODE>
+        <CODE>73635109</CODE>
     </COMPONENT>
 
     <COMPONENT>
@@ -28,7 +28,7 @@
         <NAME>Flowsensor</NAME>
         <PICTURE>KVA-datasheets/F1/sensor_F1_pic.PNG</PICTURE>
         <DATASHEET> </DATASHEET>
-        <CODE>4006144007921</CODE>
+        <CODE>23425101</CODE>
     </COMPONENT>
 
     <COMPONENT>
@@ -36,6 +36,54 @@
         <NAME>Capacitive proximity sensor</NAME>
         <PICTURE>KVA-datasheets/LH1/sensor_LH1_pic.PNG</PICTURE>
         <DATASHEET> </DATASHEET>
-        <CODE>4006144007922</CODE>
+        <CODE>87363500</CODE>
+    </COMPONENT>
+
+    <COMPONENT>
+        <NO>LH2</NO>
+        <NAME>Capacitive proximity sensor</NAME>
+        <PICTURE>KVA-datasheets/LH2/sensor_LH2_pic.PNG</PICTURE>
+        <DATASHEET> </DATASHEET>
+        <CODE>47362505</CODE>
+    </COMPONENT>
+
+    <COMPONENT>
+        <NO>LL1</NO>
+        <NAME>Capacitive proximity sensor</NAME>
+        <PICTURE>KVA-datasheets/LL1/sensor_LL1_pic.PNG</PICTURE>
+        <DATASHEET> </DATASHEET>
+        <CODE>67352609</CODE>
+    </COMPONENT>
+
+    <COMPONENT>
+        <NO>LL2</NO>
+        <NAME>Capacitive proximity sensor</NAME>
+        <PICTURE>KVA-datasheets/LL2/sensor_LL2_pic.PNG</PICTURE>
+        <DATASHEET> </DATASHEET>
+        <CODE>67251209</CODE>
+    </COMPONENT>
+
+    <COMPONENT>
+        <NO>P1</NO>
+        <NAME>Pump</NAME>
+        <PICTURE>KVA-datasheets/P1/actuator_P1_pic.PNG</PICTURE>
+        <DATASHEET> </DATASHEET>
+        <CODE>23421202</CODE>
+    </COMPONENT>
+
+    <COMPONENT>
+        <NO>V1</NO>
+        <NAME>Proportional valve</NAME>
+        <PICTURE>KVA-datasheets/V1/actuator_V1_pic.PNG</PICTURE>
+        <DATASHEET> </DATASHEET>
+        <CODE>63762105</CODE>
+    </COMPONENT>
+
+    <COMPONENT>
+        <NO>Y1</NO>
+        <NAME>2/2-way solenoid valve</NAME>
+        <PICTURE>KVA-datasheets/Y1/actuator_Y1_pic.PNG</PICTURE>
+        <DATASHEET> </DATASHEET>
+        <CODE>73871200</CODE>
     </COMPONENT>
 </CATALOG>
