@@ -12,7 +12,7 @@
     </script>
     <h1>Barcode Scanner</h1>
     <p>I'm a Barcode-Scanner</p>
-    <input type="text" id="searchBar" onkeyup="matchSearch(xmlDoc)" placeholder="Search component...">
+    <input type="text" id="searchBar" oninput="matchSearch(xmlDoc)" placeholder="Search component...">
   </div>
 </head>
 
@@ -32,6 +32,7 @@
 
     <div class="main">
       <!-- <h2>Component:</h2> -->
+      <h3 id='compCode'></h3>
       <h3 id='compName'></h3>
       <!-- <div class="componentImg" style="height:200px;"> </div> -->
       <img id='compImg' border="0" width="100px" />
