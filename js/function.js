@@ -147,10 +147,13 @@ function updateCompData(code, xmlDoc) {
     document.getElementById("compCode").innerText = "Code: " + code;
     document.getElementById("compName").innerText = x[index].getElementsByTagName("NO")[0].childNodes[0].nodeValue + "  " +
       x[index].getElementsByTagName("NAME")[0].childNodes[0].nodeValue;
-   
-    document.getElementById('pdfWindow').innerHTML = '<embed id="compPdf" src="'+
-    "./data/" + x[index].getElementsByTagName("DATASHEET")[0].childNodes[0].nodeValue
-    + '" width="100%" height="100%">';
+
+    // document.getElementById('pdfWindow').innerHTML = '<embed id="compPdf" src="' +
+    //   "./data/" + x[index].getElementsByTagName("DATASHEET")[0].childNodes[0].nodeValue
+    //   + '" width="100%" height="100%">';
+
+    PDFObject.embed("./data/" +
+      x[index].getElementsByTagName("DATASHEET")[0].childNodes[0].nodeValue,"#pdfWindow")
     // document.getElementById("compPdf").src = "./data/" + x[index].getElementsByTagName("DATASHEET")[0].childNodes[0].nodeValue;
   }
   else
