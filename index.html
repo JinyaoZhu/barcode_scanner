@@ -14,8 +14,7 @@
       xmlDoc = loadXmlFile("./data/components.xml");
     </script>
     <h1>Barcode Scanner</h1>
-    <p>I'm a Barcode-Scanner</p>
-    <input type="text" id="searchBar" onkeyup="onEnter(event,xmlDoc)" placeholder="Search component...">
+    <!-- <p>I'm a Barcode-Scanner</p> -->
     <p id=lastScan>Last scan:</p>
   </div>
 </head>
@@ -23,6 +22,7 @@
 <body>
   <div class="row">
     <div class="side">
+        <input type="text" id="searchBar" onkeydown="onEnter(event,xmlDoc)" placeholder="Search component..." autofocus="autofocus">
       <table id="cdTable">
         <script type="text/javascript">
           drawTable(xmlDoc);
