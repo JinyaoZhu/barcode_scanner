@@ -21,23 +21,25 @@
 
 <body>
   <div class="row">
-    <div class="side">
-        <input type="text" id="searchBar" onkeyup = "onEnter(event,xmlDoc)" placeholder="Search component..." autofocus="autofocus">
-      <table id="cdTable">
+    <div id="searchSideNav" class="sidenav">
+        <input type="text" id="searchBar" onkeyup = 'onEnter(event,xmlDoc)' placeholder="Search component...">
+        <script type="text/javascript"> setAutoFocus("searchBar") </script>
+
+        <table id="cdTable">
         <script type="text/javascript">
           drawTable(xmlDoc);
           sortTable();
-          setAutoFocus("searchBar");
         </script>
       </table>
       <script type="text/javascript">
         addTableOnClickEven(document.getElementById("cdTable"), xmlDoc);
       </script>
+
     </div>
 
     <div class="main">
       <!-- <h2>Component:</h2> -->
-      <h3 id='compCode'>Code:</h3>
+      <h3 id='compCode'>Welcome!!!</h3>
       <h3 id='compName'></h3>
       <!-- <div class="componentImg" style="height:200px;"> </div> -->
       <img id='compImg' border="0" width="100px" />

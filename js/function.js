@@ -165,6 +165,7 @@ function updateCompData(code, xmlDoc) {
   var x = xmlDoc.getElementsByTagName("COMPONENT");
 
   if (index != -1) {
+    closeNav();
     document.getElementById("compImg").src = "./data/" + x[index].getElementsByTagName("PICTURE")[0].childNodes[0].nodeValue;
     document.getElementById("compCode").innerText = "Code: " + code;
     document.getElementById("compName").innerText = x[index].getElementsByTagName("NO")[0].childNodes[0].nodeValue + "  " +
@@ -178,15 +179,28 @@ function updateCompData(code, xmlDoc) {
       x[index].getElementsByTagName("DATASHEET")[0].childNodes[0].nodeValue,"#pdfWindow")
     // document.getElementById("compPdf").src = "./data/" + x[index].getElementsByTagName("DATASHEET")[0].childNodes[0].nodeValue;
   }
-  else
+  else{
     clearCompData();
+    openNav();
+  }
 }
 
 function clearCompData() {
   document.getElementById("compImg").src = "";
   document.getElementById("compCode").innerText = "";
   document.getElementById("compName").innerText = "No matching.";
-  // document.getElementById("compPdf").src = "";
+  PDFObject.embed("","#pdfWindow");
+  // document.getElementById("compPdf").src = "";  
+}
+
+function openNav() {
+  document.getElementById("searchSideNav").style.width = "500px";
+  document.getElementById("searchSideNav").style.padding = "10px";
+}
+
+function closeNav() {
+  document.getElementById("searchSideNav").style.width = "0px";
+  document.getElementById("searchSideNav").style.padding = "0px";
 }
 
 function addTableOnClickEven(table, xmlDoc) {

@@ -58,17 +58,28 @@ body{
     background-color: #ffffff;
     padding: 10px;
 }
+
+.sidenav {
+    /* -ms-flex: 30%; */
+    height: 100%;
+    width: 500px;
+    padding: 10px;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
  
 .main {   
     -ms-flex: 20%; /* IE10 */
     flex: 20%;
     background-color: white;
-    padding: 10px;
+    padding: 20px;
 }
 
 .pdfView{
     -ms-flex: 50%; /* IE10 */
     flex: 50%;
+    height: 600px;
     background-color: white;
     padding: 10px;
 }
