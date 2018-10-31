@@ -6,6 +6,22 @@ var timer;
 //     timer = setTimeout(callback, ms);
 // };
 
+function setAutoFocus(search_bar_id) {
+  document.onkeyup = function (e) {
+    // console.log(document.getElementById(search_bar_id).value.length);
+    // console.log("All:"+String.fromCharCode(e.keyCode));
+    if (document.activeElement != document.getElementById(search_bar_id)) {
+      document.getElementById(search_bar_id).focus();
+      if ((code_entered.length == 0) & (e.keyCode != 8)) {
+        // document.getElementById(search_bar_id).value = String.fromCharCode(e.keyCode);
+        code_entered = String.fromCharCode(e.keyCode);
+        document.getElementById(search_bar_id).value = code_entered;
+        // console.log(e.keyCode);
+      }
+    }
+  };
+}
+
 var keyUpDelay = (function () {
   var timer = 0;
   return function (callback, ms) {
@@ -62,16 +78,22 @@ function matchSearch(xmlDoc) {
   // clearCompData();
 }
 
-function onEnter(event, xmlDoc) {
-  event.preventDefault();
-  if (event.keyCode == 13) {
-    var input;
-    input = document.getElementById("searchBar");
-    updateCompData(input.value, xmlDoc);
-    document.getElementById('lastScan').innerHTML = 'Last scan: ' + input.value;
-    input.value = "";
-    // console.log(table.rows[visble_index].cells[0].innerHTML);
+var code_entered = "";
+
+function onEnter(e, xmlDoc) {
+  // console.log("onEnter:"+String.fromCharCode(e.keyCode));
+  if (e.keyCode == 13) {
+    var input = document.getElementById("searchBar");
+    // console.log("code_entered:"+code_entered);
+    // console.log("input:" + input.value);
+    updateCompData(code_entered, xmlDoc);
+    document.getElementById('lastScan').innerHTML = 'Last scan: ' + code_entered;
+    code_entered = "";
+    input.value = code_entered;
+    // console.log(input.value);
   }
+  else
+    code_entered = code_entered + String.fromCharCode(e.keyCode);
 }
 
 function loadXmlFile(xmlPath) {

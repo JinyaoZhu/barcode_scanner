@@ -22,11 +22,12 @@
 <body>
   <div class="row">
     <div class="side">
-        <input type="text" id="searchBar" onkeydown="onEnter(event,xmlDoc)" placeholder="Search component..." autofocus="autofocus">
+        <input type="text" id="searchBar" onkeyup = "onEnter(event,xmlDoc)" placeholder="Search component..." autofocus="autofocus">
       <table id="cdTable">
         <script type="text/javascript">
           drawTable(xmlDoc);
           sortTable();
+          setAutoFocus("searchBar");
         </script>
       </table>
       <script type="text/javascript">
